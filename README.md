@@ -1,8 +1,8 @@
-# Getting Started with Create React App
+# Car Service web app with backend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is developed by React.js
 
-## Available Scripts
+## Live hosted: 
 
 In the project directory, you can run:
 
