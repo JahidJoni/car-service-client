@@ -45,7 +45,6 @@ const Customer = () => {
     }
     const handlePaymentSuccess = (data) => {
         setPaymentId(data)
-        console.log(paymentId);
     }
     const handleStatus = e => {
         setStatus(e.target.value);
@@ -62,7 +61,7 @@ const Customer = () => {
                     <p>Cost: $ {service.cost}</p>
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <p className="form-label">Name</p>
-                        <input name="name" defaultValue={loggedInUser.name} className="form-control w-50" ref={register} /> <br />
+                        <input name="name" className="form-control w-50" ref={register} /> <br />
                         <p className="form-label">Email</p>
                         <input name="email" defaultValue={loggedInUser.email} className="form-control w-50" ref={register} /> <br />
                         <div className="row w-50">

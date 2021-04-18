@@ -31,7 +31,7 @@ const ServiceList = () => {
                                     <div class="card-body">
                                         <h5 class="card-title">{order.service}</h5>
                                         <p class="card-text">{order.details}</p>
-                                        <p class="card-text"><small class="text-muted">{order.status}</small></p>
+                                        <p class="card-text"><small class="text-muted">Status: {order.status}</small></p>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,10 @@
+table, th, td {
+    padding: 1rem 2rem;
+  }
+  table, th{
+      border: 1px solid lightgray;
+  }
+  table{
+      background-color: rgba(61, 236, 120, 0.644);
+      border-radius: 0.5rem;
+  }

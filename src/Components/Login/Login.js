@@ -25,12 +25,23 @@ const Login = () => {
         /** @type {firebase.auth.OAuthCredential} */
         const user = result.user;
         setLoggedInUser(user)
+        storeAuthToken();
         history.replace(from)
       }).catch((error) => {
         var errorMessage = error.message;
       });
-
   }
+
+  const storeAuthToken = () => {
+    firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+      .then(function (idToken) {
+        sessionStorage.setItem('token', idToken);
+        history.replace(from);
+      }).catch(function (error) {
+        // Handle error
+      });
+  }
+
   return (
     <div>
       <Navbar></Navbar>
