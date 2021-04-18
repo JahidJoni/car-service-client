@@ -1,6 +1,9 @@
 import React from 'react';
 import special from '../../../images/special.jpg'
 import './SpecialService.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
 const SpecialService = () => {
     return (
@@ -15,7 +18,7 @@ const SpecialService = () => {
                     <p className="text-white my-5">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.  Tempore efacere amet apevoluptatem magnam nesciunt officia nemo nam, delectus minima velit beatae iste praesentium ad repudiandae, similique excepturi sapiente.
                     </p>
-                    <button className="btn btn-info">Learn More</button>
+                    <Link to="/services" className="btn btn-info my-3">Learn More <FontAwesomeIcon icon={faArrowRight}/></Link>
                 </div>
             </div>
         </div>

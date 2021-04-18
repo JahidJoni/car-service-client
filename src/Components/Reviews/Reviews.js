@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const Reviews = () => {
     const [imageURL, setImageURL] = useState(null);
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
         const reviewData = {
@@ -15,7 +15,7 @@ const Reviews = () => {
             imageURL: imageURL
         }
 
-        fetch('http://localhost:5000/addReviews', {
+        fetch('https://peaceful-wildwood-84338.herokuapp.com/addReviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

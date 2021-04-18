@@ -8,7 +8,7 @@ const ServiceList = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders?email=' + loggedInUser.email)
+        fetch('https://peaceful-wildwood-84338.herokuapp.com/orders?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [loggedInUser.email])
@@ -19,7 +19,7 @@ const ServiceList = () => {
                 <Sidebar></Sidebar>
             </div>
             <div className="col-md-10 mt-5 ml-5">
-                <h2 className="px-5 py-2">You have {orders.length} services pending.</h2>
+                <h3 style={{color: '#0bff96'}} className="px-5 py-2">Total {orders.length} services pending.</h3>
                 {
                     orders.map(order => <div className="px-5 py-2">
                         <div class="card mb-3" style={{maxWidth: '540px'}}>
@@ -31,7 +31,7 @@ const ServiceList = () => {
                                     <div class="card-body">
                                         <h5 class="card-title">{order.service}</h5>
                                         <p class="card-text">{order.details}</p>
-                                        <p class="card-text"><small class="text-muted">Pending...</small></p>
+                                        <p class="card-text"><small class="text-muted">{order.status}</small></p>
                                     </div>
                                 </div>
                             </div>

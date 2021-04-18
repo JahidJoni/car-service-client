@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const AddService = () => {
     const [imageURL, setImageURL] = useState(null);
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
 
     const onSubmit = data => {
         const serviceData = {
@@ -16,7 +16,7 @@ const AddService = () => {
         }
         console.log(serviceData);
 
-        fetch('http://localhost:5000/addService', {
+        fetch('https://peaceful-wildwood-84338.herokuapp.com/addService', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -50,15 +50,19 @@ const AddService = () => {
             <div className="col-md-2">
                 <Sidebar></Sidebar>
             </div>
-            <div className="col-md-10 mt-5">
+            <div className="col-md-10 mt-3 p-5">
+                <h3 style={{color: '#0bff96'}}>Add A News Service</h3>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <input name="name" className="form-control" ref={register} />
-                    <input name="details" className="form-control" ref={register} />
-                    <input name="cost" className="form-control" ref={register({ required: true })} />
-                    <input name="example" type="file" ref={register} className="form-control" onChange={handleImageUpload}/>
+                    <p className="form-label">Name of Service</p>
+                    <input name="name" className="form-control w-50" ref={register} /> <br/>
+                    <p className="form-label">Details</p>
+                    <input name="details" className="form-control w-50" ref={register} /> <br/>
+                    <p className="form-label">Bill of Service</p>
+                    <input name="cost" className="form-control w-50" ref={register({ required: true })} /> <br/>
+                    <input name="example" type="file" ref={register} className="form-control w-50" onChange={handleImageUpload}/>
                     {errors.exampleRequired && <span>This field is required</span>}
 
-                    <input type="submit" />
+                    <input type="submit" className="btn btn-info btn-sm px-5 mt-3"/>
                 </form>
             </div>
         </div>

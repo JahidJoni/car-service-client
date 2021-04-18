@@ -5,7 +5,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const MakeAdmin = () => {
     const [imageURL, setImageURL] = useState(null);
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data =>{
            const adminData = {
             name: data.name,
@@ -13,7 +13,7 @@ const MakeAdmin = () => {
             image: imageURL
            }
 
-           fetch('http://localhost:5000/addAdmin', {
+           fetch('https://peaceful-wildwood-84338.herokuapp.com/addAdmin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +47,7 @@ const MakeAdmin = () => {
             <Sidebar></Sidebar>
         </div>
         <div className="col-md-10 mt-4 p-5">
-            <h2>Give All information about new admin</h2>
+            <h3 style={{color: '#0bff96'}}>Give All Information About New Admin</h3>
         <form onSubmit={handleSubmit(onSubmit)}>
                         <p className="form-label">Name</p>
                         <input name="name" className="form-control w-50" ref={register} /> <br />

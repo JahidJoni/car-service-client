@@ -28,7 +28,7 @@ const Testimonials = () => {
     const [reviews, setReviews] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://peaceful-wildwood-84338.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
@@ -36,8 +36,8 @@ const Testimonials = () => {
     }, [])
     return (
        <section className="testimonials my-5 py-5">
-           <div className="container">
-               <div className="section-header text-center">
+           <div className="row">
+               <div className="text-center">
                    <h5 style={{color: '#0bff96'}} className="text-uppercase">Testimonial</h5>
                    <h4>See What Our Customer Says <br/> Says </h4>
                </div>

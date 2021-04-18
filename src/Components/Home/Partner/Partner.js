@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import uber from '../../../images/uber.jpeg'
 import pathao from '../../../images/Pathao-logo.png'
 import airtel from '../../../images/air-logo.jpg'
@@ -26,15 +26,15 @@ const partners = [
     {
         id: 5,
         img: dhakabank
-    }
+    },
 ]
 
 const Partner = () => {
 
   return (
-    <section className='partner'>
+    <section className='partner my-5'>
         <h3 style={{textAlign:'center', color: '#0bff96'}}>Some Of Our Customers - </h3>
-      <div className='container d-flex justify-content-around align-items-center my-5'>
+      <div className='container col-md-12 text-center'>
           
         {partners.map(partner => (
           <SinglePartner key={partner.id} partner={partner} />

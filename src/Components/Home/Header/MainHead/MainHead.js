@@ -1,6 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import banner from '../../../../images/mainhaed.jpg'
 import Navbar from '../Navbar/Navbar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 const MainHead = () => {
     return (
@@ -8,15 +11,15 @@ const MainHead = () => {
         <Navbar></Navbar>
         <div className="row p-5">
             <div className="col-md-6 d-flex align-items-center">
-              <div className="">
+              <div>
               <h1>Upgrade Your Car. Make It Powerful!</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam, possimus alias maiores inventore quis neque obcaecati eveniet. Maiores, non vero?</p>
                 <br/>
-                <button className="btn btn-info">Explore Our Services</button>
+                <Link to="/services" className="btn btn-info mb-2">Explore Our Services <FontAwesomeIcon icon={faArrowRight}/></Link>
               </div>
             </div>
             <div className="col-md-6">
-                <img className="img-fluid" src={banner} alt=""/>
+                <img className="img-fluid mt-1" src={banner} alt=""/>
             </div>
         </div>
         </div>
